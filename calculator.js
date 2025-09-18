@@ -3,6 +3,8 @@ let table = document.getElementById("resultsTable");
 
 let keepGoing = true;
 
+let results = [];
+
 while (keepGoing) {
     // Prompt for X value
     let x = prompt("Enter the first number (x):");
