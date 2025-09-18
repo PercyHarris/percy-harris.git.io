@@ -71,11 +71,15 @@ while (keepGoing) {
     let total = results.reduce((a, b) => a + b, 0);
     let avg = (total / results.length).toFixed(2);
 
-    document.write("<h2 style='color:gold;'>Summary Table</h2>");
-    document.write("<table border='1' style='margin:auto; border-collapse:collapse; color:gold; background-color:black;'>");
-    document.write("<tr><th>Minimum</th><th>Maximum</th><th>Average</th><th>Total</th></tr>");
-    document.write("<tr><td>" + min + "</td><td>" + max + "</td><td>" + avg + "</td><td>" + total + "</td></tr>");
-    document.write("</table>");
+    let tableHTML = `
+            <table border='1' style='margin:auto; border-collapse:collapse; color:gold; background-color:black;'>
+                <tr><th>Minimum</th><th>Maximum</th><th>Average</th><th>Total</th></tr>
+                <tr><td>${min}</td><td>${max}</td><td>${avg}</td><td>${total}</td></tr>
+            </table>
+        `;
+
+        // Insert table into container
+        document.getElementById("tableContainer").innerHTML = tableHTML;
 }
 
 
