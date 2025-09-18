@@ -61,4 +61,20 @@ while (keepGoing) {
 
     // Ask if the user wants to continue
     keepGoing = confirm("Do you want to perform another calculation?");
+
+
+    if (results.length > 0) {
+    let min = Math.min(...results);
+    let max = Math.max(...results);
+    let total = results.reduce((a, b) => a + b, 0);
+    let avg = (total / results.length).toFixed(2);
+
+    document.write("<h2 style='color:gold;'>Summary Table</h2>");
+    document.write("<table border='1' style='margin:auto; border-collapse:collapse; color:gold; background-color:black;'>");
+    document.write("<tr><th>Minimum</th><th>Maximum</th><th>Average</th><th>Total</th></tr>");
+    document.write("<tr><td>" + min + "</td><td>" + max + "</td><td>" + avg + "</td><td>" + total + "</td></tr>");
+    document.write("</table>");
+}
+
+
 }
